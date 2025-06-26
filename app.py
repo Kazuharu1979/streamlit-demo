@@ -14,7 +14,7 @@ start_date = datetime.today() - timedelta(days=days)
 
 # 表示する指標
 indices = {
-    "S&P 500（米国）": "^GSPC",
+    "S&P 500（米国）": "SPY",
     "日経平均（日本）": "^N225",
     "DAX（ドイツ）": "^GDAXI",
     "USD/JPY": "JPY=X",
