@@ -53,17 +53,3 @@ for i, (name, ticker) in enumerate(indices.items()):
                 yaxis_title="価格"
             )
             st.plotly_chart(fig, use_container_width=True)
-
-'''
-for i, (name, ticker) in enumerate(indices.items()):
-    with cols[i % 2]:
-        st.subheader(name)
-        data = get_data(ticker).dropna()
-        if data.empty:
-            st.warning(f"{name} のデータが取得できませんでした。")
-            continue
-        st.write(data.head())  # ← データの確認
-    
-        # 一旦標準のline_chartで確認
-        st.line_chart(data)
-'''
