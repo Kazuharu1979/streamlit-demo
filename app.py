@@ -31,7 +31,7 @@ def get_data(ticker):
 
 # グラフ表示：2列構成で交互に配置
 cols = st.columns(2)
-'''
+
 for i, (name, ticker) in enumerate(indices.items()):
     with cols[i % 2]:
         st.subheader(name)
@@ -41,8 +41,8 @@ for i, (name, ticker) in enumerate(indices.items()):
         else:
             fig = go.Figure()
             fig.add_trace(go.Scatter(
-                x=data.index.to_pydatetime(),  # 明示的に日付に変換
-                y=data.values,
+                x=list(data.index),   # ← 明示的にlistに変換
+                y=list(data.values),
                 mode='lines',
                 name=name
             ))
@@ -53,6 +53,7 @@ for i, (name, ticker) in enumerate(indices.items()):
                 yaxis_title="価格"
             )
             st.plotly_chart(fig, use_container_width=True)
+
 '''
 for i, (name, ticker) in enumerate(indices.items()):
     with cols[i % 2]:
@@ -65,3 +66,4 @@ for i, (name, ticker) in enumerate(indices.items()):
     
         # 一旦標準のline_chartで確認
         st.line_chart(data)
+'''
