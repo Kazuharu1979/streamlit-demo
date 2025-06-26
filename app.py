@@ -40,3 +40,5 @@ for i, (name, ticker) in enumerate(indices.items()):
         fig.update_layout(height=300, margin=dict(l=0, r=0, t=30, b=0))
         st.plotly_chart(fig, use_container_width=True)
 
+data = get_data(ticker)
+st.write(data.tail())  # データが取得できているか確認
