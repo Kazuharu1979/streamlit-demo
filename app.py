@@ -35,10 +35,8 @@ for i, (name, ticker) in enumerate(indices.items()):
     with cols[i % 2]:
         st.subheader(name)
         data = get_data(ticker)
+        st.write(data.tail())  # データが取得できているか確認
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=data.index, y=data, mode='lines'))
         fig.update_layout(height=300, margin=dict(l=0, r=0, t=30, b=0))
         st.plotly_chart(fig, use_container_width=True)
-
-data = get_data(ticker)
-st.write(data.tail())  # データが取得できているか確認
